@@ -34,12 +34,12 @@
     <script>
       var map;
       var ip = 'http://34.72.129.108:8081';
-      var src = ip+'/assets/millhouse_surveyarea.kmz';
-
+       var src = ip+'/assets/millhouse_surveyarea.kmz';
+     // var src = ip+'/assets/westcampus.kml';
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          //center: new google.maps.LatLng(-19.257753, 146.823688),
-          zoom: 2,
+          center: new google.maps.LatLng(22.3615323, 91.8273136),
+          zoom: 15,
           mapTypeId: 'terrain'
         });
 
