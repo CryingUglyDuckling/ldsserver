@@ -1,14 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <kml xmlns="http://www.opengis.net/kml/2.2" ns0:gx="http://www.google.com/kml/ext/2.2" ns0:kml="http://www.opengis.net/kml/2.2" ns0:atom="http://www.w3.org/2005/Atom">
   <Document>
-    <Camera>
-      <longitude>91.8263081597439</longitude>
-      <latitude>22.362049341375325</latitude>
-      <altitude>359.9113864581677</altitude>
-      <heading>0.0</heading>
-      <tilt>0.0</tilt>
-      <roll>0.0</roll>
-    </Camera>
+    
     <Style id="wedgeStyle">
       <LineStyle>
         <color>ff007fff</color>
