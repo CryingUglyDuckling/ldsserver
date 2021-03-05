@@ -52,11 +52,6 @@
             preserveViewport: false,
             map: map
         });
-        // var kmlLayer2 = new google.maps.KmlLayer(src2, {
-        //     suppressInfoWindows: true,
-        //     preserveViewport: false,
-        //     map: map
-        // });
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
