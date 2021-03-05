@@ -44,8 +44,9 @@
         });
 
         var kmlLayer = new google.maps.KmlLayer(src, {
-
-          map: map
+            suppressInfoWindows: true,
+            preserveViewport: false,
+            map: map
         });
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
