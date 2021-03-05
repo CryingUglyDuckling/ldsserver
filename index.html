@@ -38,7 +38,7 @@
         // var src = ip+'/assets/westcampus.kml';
         var src = ip+'/assets/aggregated_circles.kml';
         //var src = ip+'/assets/doc.kml';
-        var src2 = ip+'/assets/survey.kml';
+        //var src2 = ip+'/assets/survey.kml';
         // var src = ip+'/assets/fullmap.kml';
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -52,11 +52,11 @@
             preserveViewport: false,
             map: map
         });
-        var kmlLayer2 = new google.maps.KmlLayer(src2, {
-            suppressInfoWindows: true,
-            preserveViewport: false,
-            map: map
-        });
+        // var kmlLayer2 = new google.maps.KmlLayer(src2, {
+        //     suppressInfoWindows: true,
+        //     preserveViewport: false,
+        //     map: map
+        // });
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
