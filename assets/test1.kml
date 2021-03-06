@@ -3010,7 +3010,7 @@
         <styleUrl>#emissionIconStyle</styleUrl>
       </Placemark>
     </Folder> -->
-    <!-- <Folder>
+    <Folder>
       <name>Survey area (1.0 SCFH)</name>
       <Placemark>
         <Style>
@@ -3908,6 +3908,6 @@
           </Polygon>
         </MultiGeometry>
       </Placemark>
-    </Folder> -->
+    </Folder>
   </Document>
 </kml>
