@@ -36,10 +36,10 @@
       var ip = 'http://34.72.129.108:8081';
         // var src = ip+'/assets/millhouse_surveyarea.kmz';
         // var src = ip+'/assets/westcampus.kml';
-        var src = ip+'/assets/aggregated_circles2.kml';
+        // var src = ip+'/assets/aggregated_circles2.kml';
         //var src = ip+'/assets/doc.kml';
-        var src2 = ip+'/assets/survey.kml';
-        // var src = ip+'/assets/fullmap.kml';
+        // var src2 = ip+'/assets/survey.kml';
+        var src = ip+'/assets/test.kml';
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(22.3615323, 91.8273136),
@@ -52,11 +52,11 @@
             preserveViewport: false,
             map: map
         });
-        var kmlLayer2 = new google.maps.KmlLayer(src2, {
-            suppressInfoWindows: true,
-            preserveViewport: false,
-            map: map
-        });
+        // var kmlLayer2 = new google.maps.KmlLayer(src2, {
+        //     suppressInfoWindows: true,
+        //     preserveViewport: false,
+        //     map: map
+        // });
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
