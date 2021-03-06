@@ -37,7 +37,7 @@
         </Icon>
       </IconStyle>
     </Style>
-    <!-- <Folder>
+    <Folder>
       <name>Aggregated detection indications</name>
       <Placemark>
         <name>#1 (x2)</name>
@@ -3009,7 +3009,7 @@
         <name>#54 (x1)</name>
         <styleUrl>#emissionIconStyle</styleUrl>
       </Placemark>
-    </Folder> -->
+    </Folder>
     <Folder>
       <name>Survey area (1.0 SCFH)</name>
       <Placemark>
