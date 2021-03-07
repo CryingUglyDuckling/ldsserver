@@ -7,5 +7,8 @@ app.get('/',function(req,res){
 app.get('/kmz',function(req,res){
     res.sendFile(__dirname+'/Kmz test.html');
 });
+app.get('/map',function(req,res){
+    res.sendFile(__dirname+'/testmap.html');
+});
 
 app.listen(8081);

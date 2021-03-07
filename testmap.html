@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polygon Arrays</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      // This example creates a simple polygon representing the Bermuda Triangle.
+      // When the user clicks on the polygon an info window opens, showing
+      // information about the polygon's coordinates.
+      let map;
+      let infoWindow;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 5,
+          center: { lat: 24.886, lng: -70.268 },
+          mapTypeId: "terrain",
+        });
+        // Define the LatLng coordinates for the polygon.
+        const triangleCoords = [
+        {lat:91.8215732890248, lng:22.3685672766667},
+        {lat:91.8215721522059, lng:22.3685769430447},
+        {lat:91.8215687948985, lng:22.3685861574337},
+        {lat:91.8215633740862, lng:22.368594488979},
+        {lat:91.8215561432399, lng:22.3686015481068},
+        {lat:91.821547440466, lng:22.3686070047402},
+        {lat:91.8215376726966, lng:22.368610603733},
+        {lat:91.8215272966622, lng:22.3686121768003},
+        {lat:91.821516797535, lng:22.3686116503873},
+        {lat:91.821506666243, lng:22.3686090491084},
+        {lat:91.8214973765146, lng:22.3686044945966},
+        {lat:91.8214893627273, lng:22.3685981998157},
+        {lat:91.8214829995971, lng:22.3685904591028},
+        {lat:91.8214785846567, lng:22.3685816344049},
+        {lat:91.8214763243435, lng:22.3685721383551},
+        {lat:91.8214763243469, lng:22.3685624149782},
+        {lat:91.8214785846662, lng:22.3685529189284},
+        {lat:91.821482999611, lng:22.3685440942305},
+        {lat:91.821489362743, lng:22.3685363535176},
+        {lat:91.8214973765292, lng:22.3685300587367},
+        {lat:91.8215066662538, lng:22.3685255042249},
+        {lat:91.82151679754, lng:22.368522902946},
+        {lat:91.8215272966605, lng:22.368522376533},
+        {lat:91.8215376726885, lng:22.3685239496003},
+        {lat:91.821547440453, lng:22.3685275485931},
+        {lat:91.8215561432244, lng:22.3685330052265},
+        {lat:91.821563374071, lng:22.3685400643543},
+        {lat:91.8215687948865, lng:22.3685483958996},
+        {lat:91.8215687948865, lng:22.3685483958996},
+
+        ];
+        // Construct the polygon.
+        const bermudaTriangle = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: "#FF0000",
+          strokeOpacity: 0.8,
+          strokeWeight: 3,
+          fillColor: "#FF0000",
+          fillOpacity: 0.35,
+        });
+        bermudaTriangle.setMap(map);
+        // Add a listener for the click event.
+        bermudaTriangle.addListener("click", showArrays);
+        infoWindow = new google.maps.InfoWindow();
+      }
+
+      function showArrays(event) {
+        // Since this polygon has only one path, we can call getPath() to return the
+        // MVCArray of LatLngs.
+        const polygon = this;
+        const vertices = polygon.getPath();
+        let contentString =
+          "<b>Bermuda Triangle polygon</b><br>" +
+          "Clicked location: <br>" +
+          event.latLng.lat() +
+          "," +
+          event.latLng.lng() +
+          "<br>";
+
+        // Iterate over the vertices.
+        for (let i = 0; i < vertices.getLength(); i++) {
+          const xy = vertices.getAt(i);
+          contentString +=
+            "<br>" + "Coordinate " + i + ":<br>" + xy.lat() + "," + xy.lng();
+        }
+        // Replace the info window's content and position.
+        infoWindow.setContent(contentString);
+        infoWindow.setPosition(event.latLng);
+        infoWindow.open(map);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
